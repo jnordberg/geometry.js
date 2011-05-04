@@ -84,6 +84,19 @@ Size.prototype.aspectFit = function(size, keepInside) {
 };
 
 /*
+  Method: scale
+
+  Arguments:
+
+  factor - (*float*, required) - factor to multiply size by
+
+  Returns a <Size> scaled by *factor*
+*/
+Size.prototype.scale = function(factor) {
+  return new Size(this.width * factor, this.height * factor);
+};
+
+/*
   Method: toString
 
   Returns string representation of point
