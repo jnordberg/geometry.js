@@ -60,6 +60,30 @@ Size.prototype.standardize = function() {
 };
 
 /*
+  Method: aspectFit
+
+  Scales size to the size given, keeping aspect ratio.
+
+  Arguments:
+
+  size       - (*<Size>*, required) maximum size to scale up to
+  keepInside - (*boolean*, optional. defaults to true) if true size will be scaled to *maximum*
+               the size given; otherwise it will be scaled to *at least* size given
+
+  Returns:
+
+  A <Size> scaled to the size given with aspect ratio intact.
+*/
+Size.prototype.aspectFit = function(size, keepInside) {
+  if (keepInside === undefined) keepInside = true;
+  var nw = size.height * this.width / this.height;
+  var nh = size.width * this.height / this.width;
+  if (keepInside ^ (nw >= size.width))
+    return new Size(nw || 1, size.height);
+  return new Size(size.width, nh || 1);
+};
+
+/*
   Method: toString
 
   Returns string representation of point
