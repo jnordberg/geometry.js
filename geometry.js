@@ -14,6 +14,13 @@ function pick() {
   }
 };
 
+function merge(o1, o2) {
+  var key, rv = {};
+  for (key in o1) rv[key] = o1[key];
+  for (key in o2) rv[key] = o2[key];
+  return rv;
+};
+
 /*
   Class: Size
   An object that contains width and height values
@@ -94,6 +101,18 @@ Size.prototype.aspectFit = function(size, keepInside) {
 */
 Size.prototype.scale = function(factor) {
   return new Size(this.width * factor, this.height * factor);
+};
+
+/*
+  Method: toStyles
+
+  Returns an object with CSS styles defining the size.
+*/
+Size.prototype.toStyles = function() {
+  return {
+    'width': parseInt(this.width) + 'px',
+    'height': parseInt(this.height) + 'px'
+  };
 };
 
 /*
@@ -186,6 +205,18 @@ Point.prototype.addPoint = function(point) {
 Point.prototype.substractPoint = function(point) {
   return new Point(this.x - point.x, this.y - point.y);
 }
+
+/*
+  Method: toStyles
+
+  Returns an object with CSS styles defining the size.
+*/
+Point.prototype.toStyles = function() {
+  return {
+    'left': parseInt(this.x) + 'px',
+    'top': parseInt(this.y) + 'px'
+  };
+};
 
 /*
   Method: toString
@@ -371,6 +402,15 @@ Rect.prototype.setMid = function(midpoint) {
     midpoint.y - (this.size.height / 2)
   );
   return new Rect(origin, this.size);
+};
+
+/*
+  Method: toStyles
+
+  Returns an object with CSS styles defining the size.
+*/
+Rect.prototype.toStyles = function() {
+  return merge(this.origin.toStyles(), this.size.toStyles());
 };
 
 /*
