@@ -320,6 +320,23 @@ Rect.prototype.getMid = function() {
 };
 
 /*
+  Method: setMid
+
+  Arguments:
+
+  midpoint - <Point> defining the new midpoint of the rect
+
+  Returns a new <Rect> with the same size centered at the point given
+*/
+Rect.prototype.setMid = function(midpoint) {
+  var origin = new Point(
+    midpoint.x - (this.size.width / 2),
+    midpoint.y - (this.size.height / 2)
+  );
+  return new Rect(origin, this.size);
+};
+
+/*
   Method: toString
 
   Returns string representation of the rectangle
