@@ -28,8 +28,8 @@ function pick() {
   You can also pass a object with width and height to the constructor.
 */
 var Size = function(width, height) {
-  this.width = pick(arguments[0].width, width);
-  this.height = pick(arguments[0].height, height);
+  this.width = parseFloat(pick(arguments[0].width, width));
+  this.height = parseFloat(pick(arguments[0].height, height));
 };
 
 /*
@@ -88,8 +88,8 @@ Size.Zero = new Size(0, 0);
   You can also pass a object with x and y coordinates to the constructor.
 */
 var Point = function(x, y) {
-  this.x = pick(arguments[0].x, x);
-  this.y = pick(arguments[0].y, y);
+  this.x = parseFloat(pick(arguments[0].x, x));
+  this.y = parseFloat(pick(arguments[0].y, y));
 };
 
 /*
