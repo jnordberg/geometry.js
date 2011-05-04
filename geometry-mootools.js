@@ -40,11 +40,7 @@ Element.implement({
     Set element position and size using a <Rect>
   */
   setRect: function(rect) {
-    this.setStyles({
-      'left': rect.origin.x,
-      'top': rect.origin.y,
-      'width': rect.size.width, 'height': rect.size.height
-    });
+    this.setStyles(rect.toStyles());
   }
 
 });
