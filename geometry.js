@@ -307,6 +307,26 @@ Rect.prototype.standardize = function() {
 };
 
 /*
+  Method: inset
+
+  Returns a rectangle that is smaller or larger than the source rectangle, with the same center point.
+
+  Arguments:
+
+  delta - (*<Point>*, required) The xy-coordinate value to use for adjusting the source rectangle.
+
+  Returns:
+
+  A <Rect> inset by the x,y values given. Rect will be outset if the xy-coorinates are negative.
+
+*/
+Rect.prototype.inset = function(delta) {
+  var origin = this.origin.addPoint(delta);
+  var size = new Size(this.size.width - delta.x * 2, this.size.height - delta.y * 2);
+  return new Rect(origin, size);
+};
+
+/*
   Method: containsPoint
 
   Returns whether a rectangle contains a specified point.
