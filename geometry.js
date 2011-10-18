@@ -458,7 +458,9 @@ var geometry = {
 if (typeof define == 'function') {
   define(function() { return geometry; });
 } else {
-  Object.append(this, geometry);
+  for (var key in geometry) {
+    this[key] = geometry[key];
+  }
 }
 
 }).apply((typeof exports != 'undefined') ? exports : this);
