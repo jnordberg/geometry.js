@@ -229,6 +229,16 @@ Point.prototype.multiply = function(factor) {
 };
 
 /*
+  Method: dot
+
+  Returns dot product of *this* and *point*
+
+*/
+Point.prototype.dot = function(point) {
+  return this.x * point.x + this.y * point.y;
+};
+
+/*
   Method: toStyles
 
   Returns an object with CSS styles defining the size.
