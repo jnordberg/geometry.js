@@ -45,7 +45,7 @@ var Size = function(width, height) {
   *Classmethod* Creates a Size from a Point
 
   Arguments:
-  
+
   point - Point to be converted to a Size
 */
 Size.fromPoint = function(point) {
@@ -213,7 +213,7 @@ Point.prototype.addPoint = function(point) {
 */
 Point.prototype.substractPoint = function(point) {
   return new Point(this.x - point.x, this.y - point.y);
-}
+};
 
 /*
   Method: multiply
@@ -494,7 +494,7 @@ Rect.prototype.toString = function() {
 var geometry = {
   'Size': Size,
   'Point': Point,
-  'Rect': Rect 
+  'Rect': Rect
 };
 
 if (typeof define == 'function') {
