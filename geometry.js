@@ -239,6 +239,16 @@ Point.prototype.dot = function(point) {
 };
 
 /*
+  Method: normalize
+
+  Returns normalized point
+
+*/
+Point.prototype.normalize = function() {
+ return this.multiply(1 / this.length());
+};
+
+/*
   Method: toStyles
 
   Returns an object with CSS styles defining the size.
