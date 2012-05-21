@@ -216,6 +216,19 @@ Point.prototype.substractPoint = function(point) {
 }
 
 /*
+  Method: multiply
+
+  Returns point multiplied by given factor.
+
+  Arguments:
+
+  factor - Factor to multiply by
+*/
+Point.prototype.multiply = function(factor) {
+  return new Point(this.x * factor, this.y * factor);
+};
+
+/*
   Method: toStyles
 
   Returns an object with CSS styles defining the size.
