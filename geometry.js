@@ -249,6 +249,16 @@ Point.prototype.normalize = function() {
 };
 
 /*
+  Method: angle
+
+  Returns angle in radians to *point*
+
+*/
+Point.prototype.angle = function(point) {
+  return (Math.PI * 1.5 + Math.atan2(point.y - this.y, point.x - this.x)) % (Math.PI * 2);
+};
+
+/*
   Method: toStyles
 
   Returns an object with CSS styles defining the size.
