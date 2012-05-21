@@ -1,0 +1,17 @@
+{
+  "name": "geometry",
+  "version": "0.1.0",
+  "author": "Johan Nordberg <its@johan-nordberg.com>",
+  "description": "JavaScript library for working with objects in a two-dimensional coordinate system.",
+  "main": "geometry.js",
+  "keywords": [
+    "geometry",
+    "coordinate",
+    "euclid"
+  ],
+  "license": {
+    "type": "MIT",
+    "url": "https://github.com/jnordberg/geometry.js/raw/master/LICENSE"
+  },
+  "repository": "git://github.com/jnordberg/geometry.js.git",
+}
