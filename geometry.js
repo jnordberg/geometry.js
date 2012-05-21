@@ -56,6 +56,15 @@ Size.fromPoint = function(point) {
 };
 
 /*
+  Method: getMid
+
+  Returns a <Point> representing the middle point of the size
+*/
+Size.prototype.getMid = function() {
+  return new Point(this.width / 2, this.height / 2);
+};
+
+/*
   Method: standardize
 
   Returns:
